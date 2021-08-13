@@ -6,7 +6,7 @@
   <link href="https://ananll.github.io/atom.xml" rel="self"/>
   
   <link href="https://ananll.github.io/"/>
-  <updated>2021-08-13T10:18:40.442Z</updated>
+  <updated>2021-08-13T14:09:34.076Z</updated>
   <id>https://ananll.github.io/</id>
   
   <author>
@@ -17,20 +17,20 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>���óԵļ���������ӣ���</title>
+    <title>超好吃的鸡蛋煎饼果子！！</title>
     <link href="https://ananll.github.io/2021/08/13/EggStuffedPancake/"/>
     <id>https://ananll.github.io/2021/08/13/EggStuffedPancake/</id>
     <published>2021-08-13T09:44:15.000Z</published>
-    <updated>2021-08-13T10:18:40.442Z</updated>
+    <updated>2021-08-13T14:09:34.076Z</updated>
     
-    <content type="html"><![CDATA[<p>�ӻ�����˼����Ⱥ����ļ�����ӣ�С�껹�л��ȡ���Ƥ������������ô�����ţ�����������һ��������ɡ�</p><p>##�������������</p><p>###ʳ��<br>����� 300g<br>����� ����<br>������ һ��<br>������ ����<br>������ ����һ�������԰�hhh��<br>��Ҫ�飬�Լ�������</p><p>###����<br>1�� ����ۣ����˾ͼ�ˮ��������һ�㣩<br>2�� �����ȣ�����ð���ˣ��������������̯����ƽ�׹�����ɱ�������ò�Ҫ����Ŷ��Ҫ��ճ���Ļ���Ĩ����һ��Ϳɣ���<br>3�� �Ӻ�һ��ѱ����������������ǵ����������ȼ����������̺����ٷ���������ʱ���������Ϳ��ϲ���Ľ��ţ���֪������ϲ��ŷ�ڽ�����ŷ�ὴ����<br>4�� ��ú󣬽�׼���õĻ�������˵ȵȵȶ��ŵ�����<br>5�� һ�߶��ۣ����ĺúõģ����������hhh��<br>6�� �󹦸�ɣ�</p>]]></content>
+    <content type="html"><![CDATA[<p>!</p><p>加花生香菜鸡蛋热乎乎的煎饼果子（小店还有火腿、豆皮、鸡柳、）怎么养成呐？来跟着我们一起搞起来吧。</p><p><img src="https://yqfile.alicdn.com/0b11334f83b044d7b91d0f478047c3e46ebae370.png"></p><p>##请跟我这样做哈</p><p>###食材<br>·面糊 300g<br>·香菜 适量<br>·酱油 一勺<br>·花生 适量<br>·鸡蛋 俩（一个不够吃吧hhh）<br>还要麻，自己报啊。</p><p>###步骤<br>1、 和面粉（干了就加水，尽量稠一点）。</p><p>2、 锅烧热（别整冒烟了），俩勺面糊快速摊开在平底锅，搞成薄饼（最好不要放油哦，要是粘锅的话，抹薄薄一层就可）。</p><p>3、 烙好一面把饼翻过来，打上我们的两个蛋，等鸡蛋稍稍凝固好了再翻过来（这时可以在这边涂上喜欢的酱呐，不知道果子喜欢欧内酱还是欧尼酱啊）。</p><p>4、 煎好后，将准备好的花生、香菜等等等都放到里面</p><p>5、 一边对折，卷的好好的（别给整掉了hhh）</p><p>6、 大功告成！</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;�ӻ�����˼����Ⱥ����ļ�����ӣ�С�껹�л��ȡ���Ƥ������������ô�����ţ�����������һ��������ɡ�&lt;/p&gt;
-&lt;p&gt;##�������������&lt;/p&gt;
-&lt;p&gt;###ʳ��&lt;br&gt;����� 300g&lt;br&gt;����</summary>
+    <summary type="html">&lt;p&gt;!&lt;/p&gt;
+&lt;p&gt;加花生香菜鸡蛋热乎乎的煎饼果子（小店还有火腿、豆皮、鸡柳、）怎么养成呐？来跟着我们一起搞起来吧。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://yqfile.alicdn.com/0b11334f83b044d7b91d0f478047c3e46eba</summary>
       
     
     
@@ -66,12 +66,12 @@
     <published>2021-08-12T12:50:53.763Z</published>
     <updated>1985-10-26T08:15:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;p&gt;Welcome to &lt;a class=&quot;link&quot;   href=&quot;https://hexo.io/&quot; &gt;Hexo&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;! This is your very first post. Che</summary>
       
     
     
