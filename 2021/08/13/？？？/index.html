@@ -205,6 +205,12 @@
 
 <p>原因：格式出错了！冒号后没有空格导致没有成功映射。</p>
 <p>解决办法：在对应的冒号后加空格（冒号后一定要加！）。</p>
+<p>#使用Gitalk插件出现未找到相关的issues进行评论#</p>
+<p>原因：未给文章评论初始化，只需要登录 GitHub 账户即可（就这？）。</p>
+<h1 id="缺少空格"><a href="#缺少空格" class="headerlink" title="缺少空格"></a>缺少空格</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">err: YAMLException: can not <span class="built_in">read</span> a block mapping entry; a multiline key may not be an implicit key at line 5, column 1:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>原因：报错信息是提示hexo的yml配置文件，冒号后面少了空格。</p>
+<p>解决方案：到提示行将对应的空格补上即可。</p>
 
         </div>
 
@@ -428,7 +434,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#node%E7%89%88%E6%9C%AC%E5%A4%AA%E9%AB%98"><span class="nav-number">1.</span> <span class="nav-text">node版本太高</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E5%B0%91%E5%86%92%E5%8F%B7%EF%BC%9F%E2%9C%98%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%A9%BA%E6%A0%BC%EF%BC%81"><span class="nav-number">2.</span> <span class="nav-text">缺少冒号？✘————空格！</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#node%E7%89%88%E6%9C%AC%E5%A4%AA%E9%AB%98"><span class="nav-number">1.</span> <span class="nav-text">node版本太高</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E5%B0%91%E5%86%92%E5%8F%B7%EF%BC%9F%E2%9C%98%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%A9%BA%E6%A0%BC%EF%BC%81"><span class="nav-number">2.</span> <span class="nav-text">缺少冒号？✘————空格！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%BA%E5%B0%91%E7%A9%BA%E6%A0%BC"><span class="nav-number">3.</span> <span class="nav-text">缺少空格</span></a></li></ol>
     </div>
 </div>
         </aside>
