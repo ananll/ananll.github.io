@@ -237,6 +237,27 @@
 <p>2、Activity类中的<code>getPreferences()</code>方法<br>接收参数（1）：操作模式，并且将当前活动类名作为SharedPreferences的文件名</p>
 <p>3、PreferenceManager类中的<code>getDefaultSharedPreferences()</code>方法<br>静态方法，接收一个Context参数，并使用当前应用程序的包名作为前缀来命名SharedPreferences文件<br>（1）调用SharedPreferences对象的<code>edit()</code>方法来获取一个SharedPreferences.Editor对象<br>（2）向SharedPreferences.Editor对象中添加数据<br>（3）调用<code>apply()</code>方法将添加的数据提交，完成数据存储操作</p>
 <h2 id="从SharedPreferences中读取数据"><a href="#从SharedPreferences中读取数据" class="headerlink" title="从SharedPreferences中读取数据"></a>从SharedPreferences中读取数据</h2><p>SharedPreferences对象中提供了一系列<code>get</code>方法，可用于对存储的数据进行读取，且每种get方法都对应了SharedPreferences.Editor中的一种put方法。<br>接收参数（2）：键、默认值</p>
+<h1 id="SQLite数据库存储"><a href="#SQLite数据库存储" class="headerlink" title="SQLite数据库存储"></a>SQLite数据库存储</h1><p>SQLite是一款轻量级的关系型数据库，适用于存储大量复杂的关系型数据。</p>
+<h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>关键：<code>SQLiteOpenHelper</code>帮助类</p>
+<p>用法：需要创建一个自己的帮助类去继承，且需要在自己的帮助类里重写<code>onCreate()</code>和<code>onUpgrade()</code>，然后分别在其中实现创建、升级数据库的逻辑。</p>
+<p>接收参数（4 少的构造方法）：Context、数据库名、自定义的Cursor、当前数据库的版本号</p>
+<p>重要实例：<code>getReadableDatabase()</code>和<code>getWritableDatabase()</code><br>返回：SQLiteDatabase对象</p>
+<p>过程所用方法：<br><code>SQLiteDatabase的execSQL()</code>：执行建表语句</p>
+<p>检查数据库和表的创建情况：<br><code>adb shell</code>:进入设备控制台<br><code>#</code>:超级管理员<br><code>$</code>:普通管理员 -&gt;<code>su</code>:切换成超级管理员<br><code>cd /data/data/com.example.databasetest.databases/</code>:进入目录<br><code>ls</code>:查看该目录文件<br><code>sqlite3 数据库名</code>:打开数据库<br><code>.table</code>:查看目前数据库中有哪些表<br><code>.schema</code>:查看建表语句<br><code>.exit/.quit</code>退出数据库的编辑</p>
+<h2 id="升级数据库"><a href="#升级数据库" class="headerlink" title="升级数据库"></a>升级数据库</h2><p>便捷方法：运用SQLiteOpenHelper的升级功能 <code>onUpgrade()</code><br>要想让onUpgrade方法执行，则需将SQLiteOpenHelper构造方法的第四个参数（即版本号）大于当前数值即可。<br>升级后可通过adb shell等命令验证是否成功。</p>
+<h2 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h2><p>方法：SQLiteDatabase的<code>insert()</code>方法</p>
+<p>接收参数（3）：表名、null、ContentValues对象</p>
+<p>过程：再添加数据按钮的点击事件里先获取到SQLiteDatabase对象，然后使用ContentValues来对想要添加的数据进行组装（<code>put()</code>）</p>
+<p>SQL查询语句：<code>select * from Book</code></p>
+<h2 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h2><p>方法：SQLiteDatabase的<code>update()</code>方法</p>
+<p>接收参数（4）：表名、ContentValues对象、约束更新某一行或某几行的数据（？占位符）、提供字符串数组为第三个参数中的每个占位符指定相应内容</p>
+<p>过程：在更新数据按钮的点击事件里构建一个ContentValues对象，且指定一组数据，然后调用update()方法执行具体的更新操作</p>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><p>方法：SQLiteDatabase的<code>delete()</code>方法</p>
+<p>接收参数（3）：表名、约束删除的数据、···</p>
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><p>方法：SQLiteDatabase的<code>query()</code>方法</p>
+<p>接收参数（7）：表名、指定列、约束查询行、···、指定去group by的列、过滤、指定查询结果排序方式</p>
+<p>返回：Cursor对象</p>
+<p>过程：在查询按钮的点击事件里调用<code>query()</code>方法去查询数据，得到Cursor()对象，然后调用<code>moveToFirst()</code>方法将数据指针移动到第一行的位置，进入到一个循环中，去遍历查询到的每一行数据，在循环中通过Cursor的<code>getColumnIndex()</code>方法获取某一列在对应的位置索引，然后将这个索引传入到相应的取值方法中，即可得到从数据库中读取到的数据，使用<code>Log</code>打印出读取的数据，最后调用<code>close()</code>方法关闭Cursor。</p>
 
         </div>
 
@@ -445,7 +466,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8"><span class="nav-number">1.</span> <span class="nav-text">文件存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%88%B0%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">将数据存储到文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.</span> <span class="nav-text">从文件中读取数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SharedPreferences%E5%AD%98%E5%82%A8"><span class="nav-number">2.</span> <span class="nav-text">SharedPreferences存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%88%B0SharedPreferences%E4%B8%AD"><span class="nav-number">2.1.</span> <span class="nav-text">将数据存储到SharedPreferences中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8ESharedPreferences%E4%B8%AD%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">2.2.</span> <span class="nav-text">从SharedPreferences中读取数据</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8"><span class="nav-number">1.</span> <span class="nav-text">文件存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%88%B0%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">将数据存储到文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">1.2.</span> <span class="nav-text">从文件中读取数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SharedPreferences%E5%AD%98%E5%82%A8"><span class="nav-number">2.</span> <span class="nav-text">SharedPreferences存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%88%B0SharedPreferences%E4%B8%AD"><span class="nav-number">2.1.</span> <span class="nav-text">将数据存储到SharedPreferences中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8ESharedPreferences%E4%B8%AD%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="nav-number">2.2.</span> <span class="nav-text">从SharedPreferences中读取数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQLite%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%98%E5%82%A8"><span class="nav-number">3.</span> <span class="nav-text">SQLite数据库存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.2.</span> <span class="nav-text">升级数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="nav-number">3.3.</span> <span class="nav-text">添加数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="nav-number">3.4.</span> <span class="nav-text">更新数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="nav-number">3.5.</span> <span class="nav-text">删除数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE"><span class="nav-number">3.6.</span> <span class="nav-text">查询数据</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
