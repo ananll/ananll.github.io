@@ -6,7 +6,7 @@
   <link href="https://ananll.github.io/atom.xml" rel="self"/>
   
   <link href="https://ananll.github.io/"/>
-  <updated>2021-09-21T08:33:30.331Z</updated>
+  <updated>2021-09-26T11:50:18.475Z</updated>
   <id>https://ananll.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>运用手机多媒体</title>
+    <link href="https://ananll.github.io/2021/09/21/%E8%BF%90%E7%94%A8%E6%89%8B%E6%9C%BA%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
+    <id>https://ananll.github.io/2021/09/21/%E8%BF%90%E7%94%A8%E6%89%8B%E6%9C%BA%E5%A4%9A%E5%AA%92%E4%BD%93/</id>
+    <published>2021-09-21T09:41:57.000Z</published>
+    <updated>2021-09-26T11:50:18.475Z</updated>
+    
+    <content type="html"><![CDATA[<p>如何使用Android手机来运行程序？</p><h1 id="将程序运行到手机上"><a href="#将程序运行到手机上" class="headerlink" title="将程序运行到手机上"></a>将程序运行到手机上</h1><p>在将程序运行到手机上之前，需先将手机通过数据线连接到电脑上：<br>设置-&gt;开发者选项界面-&gt;勾选USB调试选项/<br>设置-&gt;关于手机-&gt;连续点击版本号，则可显示出开发者选项（Android 4.2系统及以上）<br>若电脑使用的是Windows操作系统，还需在电脑上安装手机驱动</p><p>此时，观察Android Monitor，则会发现当前有两个设备在线，分别是我们的模拟器和手机，运行，在对话框里选择运行设备，则可将程序安装到手机上</p><h1 id="使用通知"><a href="#使用通知" class="headerlink" title="使用通知"></a>使用通知</h1><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>通知用法较灵活，可在活动、广播接收器或者是服务里创建。</p><p>步骤：<br>1、调用Context的<code>getSystemService()</code>获取一个NotificationManager来对通知进行管理（向方法里传入Context.NOTIFICATION_SERVICE即可）</p><p>2、通过Builder构造器来创建Notification对象（连缀）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent(this,NotificationActivity.class); //表示启动意图</span><br><span class="line">PendingIntent pi = PendingIntent.getActivity(this,0,intent,0); //类延迟执行的Intent</span><br><span class="line">Notification notification = new NotificationCompat.Builder(context)</span><br><span class="line">                        .setContentTitle(<span class="string">&quot;This is content title&quot;</span>) //指定通知的标题内容</span><br><span class="line">                        .setContentText(<span class="string">&quot;This is content text.) //指定通知的正文内容</span></span><br><span class="line"><span class="string">                        .setWhen(System.currentTimeMillis()) //指定通知被创建的时间</span></span><br><span class="line"><span class="string">                        .setSmallIcon(R.mipmap.ic_launcher) //设置通知的小图标</span></span><br><span class="line"><span class="string">                        .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher)) //设置通知的大图标</span></span><br><span class="line"><span class="string">                        .setContentIntent(pi) //点击通知时执行相应的逻辑</span></span><br><span class="line"><span class="string">                        .setAutoCancel(true) //自动取消系统状态上的通知图标</span></span><br><span class="line"><span class="string">                        .build();</span></span><br><span class="line"><span class="string">                manager.notify(1,notification); //显示通知</span></span><br></pre></td></tr></table></figure><p>3、调用NotificationManager的<code>notify()</code>方法即可让通知显示出来（notify()接收两个参数：id、Notification对象）</p><h2 id="进阶技巧"><a href="#进阶技巧" class="headerlink" title="进阶技巧"></a>进阶技巧</h2><h2 id="高级功能"><a href="#高级功能" class="headerlink" title="高级功能"></a>高级功能</h2><h1 id="调用摄像头和相册"><a href="#调用摄像头和相册" class="headerlink" title="调用摄像头和相册"></a>调用摄像头和相册</h1><h2 id="调用摄像头拍照"><a href="#调用摄像头拍照" class="headerlink" title="调用摄像头拍照"></a>调用摄像头拍照</h2><h2 id="从相册中选择照片"><a href="#从相册中选择照片" class="headerlink" title="从相册中选择照片"></a>从相册中选择照片</h2><h1 id="播放多媒体文件"><a href="#播放多媒体文件" class="headerlink" title="播放多媒体文件"></a>播放多媒体文件</h1><h2 id="播放音频"><a href="#播放音频" class="headerlink" title="播放音频"></a>播放音频</h2><h2 id="播放视频"><a href="#播放视频" class="headerlink" title="播放视频"></a>播放视频</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;如何使用Android手机来运行程序？&lt;/p&gt;
+&lt;h1 id=&quot;将程序运行到手机上&quot;&gt;&lt;a href=&quot;#将程序运行到手机上&quot; class=&quot;headerlink&quot; title=&quot;将程序运行到手机上&quot;&gt;&lt;/a&gt;将程序运行到手机上&lt;/h1&gt;&lt;p&gt;在将程序运行到手机上之前，需先</summary>
+      
+    
+    
+    
+    <category term="Android" scheme="https://ananll.github.io/categories/Android/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>数据存储全方案——持久化技术</title>

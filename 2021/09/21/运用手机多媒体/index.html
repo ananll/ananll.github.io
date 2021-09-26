@@ -9,7 +9,7 @@
     
     <title>
         
-            Git——版本控制工具 |
+            运用手机多媒体 |
         
         安安的个人博客
     </title>
@@ -164,7 +164,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Git——版本控制工具</span>
+            <span class="title-hover-animation">运用手机多媒体</span>
         </div>
 
         
@@ -182,7 +182,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-08-28 10:24:25
+        <i class="fas fa-edit"></i>&nbsp;2021-09-21 17:41:57
     </span>
     
         <span class="article-categories article-meta-item">
@@ -196,17 +196,6 @@
             </ul>
         </span>
     
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/Git/">Git</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
     
 
     
@@ -225,31 +214,16 @@
         
 
         <div class="article-content markdown-body">
-            <p>Git——开源的分布式版本控制工具</p>
-<h1 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h1><p>cd: 改变目录<br>cd..: 回退到上一目录<br>pwd: 显示当前所在的目录路径<br>ls(ll): 列出当前目录的所有文件（ll更为详细）<br>touch: 新建一个文件<br>rm: 删除一个文件<br>mkdir: 新建一个文件夹<br>rm -r: 删除一个文件夹<br>mv: 移动文件<br>reset: 重新初始化终端、清屏<br>clear: 清屏<br>history: 查看历史命令<br>help: 帮助<br>exit: 退出<br>‘#: 表示注释</p>
-<h1 id="Git基本理论"><a href="#Git基本理论" class="headerlink" title="Git基本理论"></a>Git基本理论</h1><h2 id="工作区域"><a href="#工作区域" class="headerlink" title="工作区域"></a>工作区域</h2><p>Git本地有三个工作区域：工作目录（Working Directory）、暂存区（Stage/index）、资源库（Repository/Git Directory），若加上远程的git仓库（Remote Directory）则可分为四个工作区域。<img src="https://i.loli.net/2021/08/28/yKbwRd27O4hQGCi.png"><br>·Workspace：工作区，平时存放项目代码的地方<br>·Index/Stage：暂存区，用于临时存放改动（事实上，它只是一个文件，保存即将提交的文件列表信息）<br>·Repository：仓库区（本地仓库），安全存放数据的位置，里面有提交的所有的版本数据（HEAD指向最新放入的仓库的版本）<br>·Remote：远程仓库，托管代码的服务器，可简单认为是项目组中的一台电脑用于远程数据交换</p>
-<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>git工作流程一般如下：<br>1、在工作目录中添加、修改文件<br>2、将需要进行版本管理的文件放入暂存区域<br>3、将暂存区域的文件提交到git仓库<br>故，git管理的文件有三种状态：已修改（modified）、已暂存（staged）、已提交（committed）<img src="https://i.loli.net/2021/08/28/PWmHNSDQp2yCYnu.png"></p>
-<h1 id="项目搭建"><a href="#项目搭建" class="headerlink" title="项目搭建"></a>项目搭建</h1><p><img src="https://i.loli.net/2021/08/28/Ee8GlJWPHAZYIqc.png"></p>
-<h2 id="搭建本地仓库"><a href="#搭建本地仓库" class="headerlink" title="搭建本地仓库"></a>搭建本地仓库</h2><p>创建本地仓库的方法有两种：一种是创建全新的仓库，另一种是克隆远程仓库</p>
-<h3 id="创建全新仓库"><a href="#创建全新仓库" class="headerlink" title="创建全新仓库"></a>创建全新仓库</h3><p>1、创建全新的仓库，需要用Git管理的项目的根目录执行：<br><code>git init</code><br>2、执行后可看到，在项目目录里多出了一个.git根目录，关于版本等的所有信息都在这个目录里</p>
-<h3 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h3><p>将远程服务器上的仓库完全镜像一份至本地<br><code>git clone [url]</code></p>
-<h1 id="Git的基本操作命令"><a href="#Git的基本操作命令" class="headerlink" title="Git的基本操作命令"></a>Git的基本操作命令</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置身份(去掉名字和邮箱地址可查看是否配置成功)：<br><code>git config --global user.name &quot;&quot;</code><br><code>git config --global user.email &quot;&quot;</code><br>查看配置文件：<br><code>git config -l</code><br>查看系统的配置：<br><code>git config --system --list</code><br>查看当前用户的配置：<br><code>git config --global --list</code></p>
-<h2 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h2><p>部分文件我们不应该将其添加到版本控制当中，例数据库文件、临时文件等，我们可在主目录下建立”.gitignore”文件，其规则如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line">*.txt     <span class="comment">#忽略所有.txt结尾的文件</span></span><br><span class="line">!lib.txt  <span class="comment">#但lib.txt除外</span></span><br><span class="line">/temp     <span class="comment">#忽略该文件夹下的temp文件</span></span><br><span class="line">build/    <span class="comment">#忽略build目录下所有的文件</span></span><br><span class="line">doc/*.txt <span class="comment">#忽略doc文件夹下的.txt文件</span></span><br></pre></td></tr></table></figure>
+            <p>如何使用Android手机来运行程序？</p>
+<h1 id="将程序运行到手机上"><a href="#将程序运行到手机上" class="headerlink" title="将程序运行到手机上"></a>将程序运行到手机上</h1><p>在将程序运行到手机上之前，需先将手机通过数据线连接到电脑上：<br>设置-&gt;开发者选项界面-&gt;勾选USB调试选项/<br>设置-&gt;关于手机-&gt;连续点击版本号，则可显示出开发者选项（Android 4.2系统及以上）<br>若电脑使用的是Windows操作系统，还需在电脑上安装手机驱动</p>
+<p>此时，观察Android Monitor，则会发现当前有两个设备在线，分别是我们的模拟器和手机，运行，在对话框里选择运行设备，则可将程序安装到手机上</p>
+<h1 id="使用通知"><a href="#使用通知" class="headerlink" title="使用通知"></a>使用通知</h1><h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>通知用法较灵活，可在活动、广播接收器或者是服务里创建。</p>
+<p>步骤：<br>1、调用Context的<code>getSystemService()</code>获取一个NotificationManager来对通知进行管理（向方法里传入Context.NOTIFICATION_SERVICE即可）</p>
+<p>2、通过Builder构造器来创建Notification对象（连缀）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = new Intent(this,NotificationActivity.class); //表示启动意图</span><br><span class="line">PendingIntent pi = PendingIntent.getActivity(this,0,intent,0); //类延迟执行的Intent</span><br><span class="line">Notification notification = new NotificationCompat.Builder(context)</span><br><span class="line">                        .setContentTitle(<span class="string">&quot;This is content title&quot;</span>) //指定通知的标题内容</span><br><span class="line">                        .setContentText(<span class="string">&quot;This is content text.) //指定通知的正文内容</span></span><br><span class="line"><span class="string">                        .setWhen(System.currentTimeMillis()) //指定通知被创建的时间</span></span><br><span class="line"><span class="string">                        .setSmallIcon(R.mipmap.ic_launcher) //设置通知的小图标</span></span><br><span class="line"><span class="string">                        .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher)) //设置通知的大图标</span></span><br><span class="line"><span class="string">                        .setContentIntent(pi) //点击通知时执行相应的逻辑</span></span><br><span class="line"><span class="string">                        .setAutoCancel(true) //自动取消系统状态上的通知图标</span></span><br><span class="line"><span class="string">                        .build();</span></span><br><span class="line"><span class="string">                manager.notify(1,notification); //显示通知</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h2><p>添加所有文件到暂存区：<br><code>git add .</code><br>提交暂存区的内容到本地仓库<br><code>git commit -m &quot;提交信息&quot;</code></p>
-<h2 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h2><p>查看所有文件状态：<br><code>git status</code><br>查看指定文件状态：<br><code>git status [filename]</code><br>查看所有更改内容：<br><code>git diff</code><br>查看指定文件更改内容：<br><code>git diff [filename]</code></p>
-<h2 id="撤销未提交的修改"><a href="#撤销未提交的修改" class="headerlink" title="撤销未提交的修改"></a>撤销未提交的修改</h2><p>撤销还没执行过add命令的文件：<br><code>git checkout [filename]</code><br>撤销执行过add命令的文件，先取消添加，再撤回提交：<br><code>git reset []</code><br><code>git checkout []</code></p>
-<h2 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h2><p>查看历史提交信息：<br> <code>git log</code><br>查看其中一条信息：<br><code>git log id -1</code><br>查看信息的具体修改内容：<br><code>git log id -1 -p</code></p>
-<h2 id="git-分支中常用命令"><a href="#git-分支中常用命令" class="headerlink" title="git 分支中常用命令"></a>git 分支中常用命令</h2><p>列出本地所有分支：<br><code>git branch</code></p>
-<p>列出远程所有分支：<br><code>git branch -r</code></p>
-<p>新建一个分支，但仍然停留在当前分支：<br><code>git branch [branch-name]</code></p>
-<p>新建一个分支，并切换到该分支：<br><code>git checkout -b [branch]</code></p>
-<p>合并指定分支到当前分支：<br><code>git merge [branch]</code></p>
-<p>删除分支：<br>`git branch -d [branch-name]</p>
-<p>删除远程分支：<br><code>git push origin --delete [branch-name]</code><br><code>git branch -dr [remote/branch]</code></p>
-<p>点击了解更多<a class="link"   target="_blank" rel="noopener" href="https://gitee.com/all-about-git" >详情<i class="fas fa-external-link-alt"></i></a></p>
-
+<p>3、调用NotificationManager的<code>notify()</code>方法即可让通知显示出来（notify()接收两个参数：id、Notification对象）</p>
+<h2 id="进阶技巧"><a href="#进阶技巧" class="headerlink" title="进阶技巧"></a>进阶技巧</h2><h2 id="高级功能"><a href="#高级功能" class="headerlink" title="高级功能"></a>高级功能</h2><h1 id="调用摄像头和相册"><a href="#调用摄像头和相册" class="headerlink" title="调用摄像头和相册"></a>调用摄像头和相册</h1><h2 id="调用摄像头拍照"><a href="#调用摄像头拍照" class="headerlink" title="调用摄像头拍照"></a>调用摄像头拍照</h2><h2 id="从相册中选择照片"><a href="#从相册中选择照片" class="headerlink" title="从相册中选择照片"></a>从相册中选择照片</h2><h1 id="播放多媒体文件"><a href="#播放多媒体文件" class="headerlink" title="播放多媒体文件"></a>播放多媒体文件</h1><h2 id="播放音频"><a href="#播放音频" class="headerlink" title="播放音频"></a>播放音频</h2><h2 id="播放视频"><a href="#播放视频" class="headerlink" title="播放视频"></a>播放视频</h2>
         </div>
 
         
@@ -257,29 +231,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/08/30/%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8Git%E5%87%BA%E7%8E%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">关于使用Git出现的一些问题</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/08/13/%E6%B5%85%E8%B0%88%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6/"
+                           href="/2021/09/10/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%85%A8%E6%96%B9%E6%A1%88%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96%E6%8A%80%E6%9C%AF/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">浅谈广播机制</span>
+                                <span class="post-nav-title-item">数据存储全方案——持久化技术</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -472,7 +431,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84Linux%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">常用的Linux命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E5%9F%BA%E6%9C%AC%E7%90%86%E8%AE%BA"><span class="nav-number">2.</span> <span class="nav-text">Git基本理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%9F%9F"><span class="nav-number">2.1.</span> <span class="nav-text">工作区域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.2.</span> <span class="nav-text">工作流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">项目搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">搭建本地仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%85%A8%E6%96%B0%E4%BB%93%E5%BA%93"><span class="nav-number">3.1.1.</span> <span class="nav-text">创建全新仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">3.1.2.</span> <span class="nav-text">克隆远程仓库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">Git的基本操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">4.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6"><span class="nav-number">4.2.</span> <span class="nav-text">忽略文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81"><span class="nav-number">4.3.</span> <span class="nav-text">提交代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81"><span class="nav-number">4.4.</span> <span class="nav-text">查看文件状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E6%9C%AA%E6%8F%90%E4%BA%A4%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="nav-number">4.5.</span> <span class="nav-text">撤销未提交的修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95"><span class="nav-number">4.6.</span> <span class="nav-text">查看提交记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%88%86%E6%94%AF%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">4.7.</span> <span class="nav-text">git 分支中常用命令</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E5%88%B0%E6%89%8B%E6%9C%BA%E4%B8%8A"><span class="nav-number">1.</span> <span class="nav-text">将程序运行到手机上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E9%80%9A%E7%9F%A5"><span class="nav-number">2.</span> <span class="nav-text">使用通知</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E6%8A%80%E5%B7%A7"><span class="nav-number">2.2.</span> <span class="nav-text">进阶技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD"><span class="nav-number">2.3.</span> <span class="nav-text">高级功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E5%92%8C%E7%9B%B8%E5%86%8C"><span class="nav-number">3.</span> <span class="nav-text">调用摄像头和相册</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E6%8B%8D%E7%85%A7"><span class="nav-number">3.1.</span> <span class="nav-text">调用摄像头拍照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E7%9B%B8%E5%86%8C%E4%B8%AD%E9%80%89%E6%8B%A9%E7%85%A7%E7%89%87"><span class="nav-number">3.2.</span> <span class="nav-text">从相册中选择照片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%92%AD%E6%94%BE%E5%A4%9A%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">播放多媒体文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91"><span class="nav-number">4.1.</span> <span class="nav-text">播放音频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%AD%E6%94%BE%E8%A7%86%E9%A2%91"><span class="nav-number">4.2.</span> <span class="nav-text">播放视频</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
